@@ -4,10 +4,10 @@ plugins:
 title: [Analisando Arquiteturas de Sistemas de Software Populares - Twitch]
 description:
   [
-    Esse site irá discutir a arquitetura de software de um sistema popular e relevante incluindo detalhes sobre o sistema escolhido,
-    tecnologias utilizadas,
-    mudanças de tecnologia realizadas ao longo do tempo para atender requisitos,
-    requisitos que levaram às decisões de projeto,
-    desafios,
-    dentre outras características relacionadas a arquitetura do sistema.,
+    'Esse site irá discutir a arquitetura de software de um sistema popular e relevante incluindo detalhes sobre o sistema escolhido, ',
+    'tecnologias utilizadas, ',
+    'mudanças de tecnologia realizadas ao longo do tempo para atender requisitos, ',
+    'requisitos que levaram às decisões de projeto, ',
+    'desafios, ',
+    'dentre outras características relacionadas a arquitetura do sistema.',
   ]
