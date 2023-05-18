@@ -8,15 +8,15 @@ A ideia da nova arquitetura da Twitch era substituir o monolito por uma arquitet
 
 A linguagem foi experimentada, por exemplo, para listar as maiores livestreams para cada categoria na Twitch. Essa tecnologia foi apelidada de Jax, e apresentou uma série de desafios para seu desenvolvimento, como indexar dados em tempo real, tentando manter eles organizados.
 
-# O monólito - Parte 2
+# O monolito - Parte 2
 
 ## A migração em massa: Wexit
 
-Em 2015, o Twitch iniciou uma campanha chamada "Wexit" para migrar seu código de back-end para microsserviços Go. A maioria do site ainda estava funcionando dentro de um monólito Rails, o que apresentava vários desafios para os desenvolvedores. Diversos esforços foram feitos para melhorar a situação, incluindo desacoplar o código dentro do monólito e adicionar um proxy reverso NGINX para redirecionar o tráfego para uma nova borda da API escrita em Go.
+Em 2015, o Twitch iniciou uma campanha chamada "Wexit" para migrar seu código de back-end para microsserviços Go. A maioria do site ainda estava funcionando dentro de um monólito Rails, o que apresentava vários desafios para os desenvolvedores. Diversos esforços foram feitos para melhorar a situação, incluindo desacoplar o código dentro do monolito e adicionar um proxy reverso NGINX para redirecionar o tráfego para uma nova borda da API escrita em Go.
 
-O processo de migração consistiu em desenvolver o novo microsserviço, replicar o endpoint antigo na nova borda, atualizar a configuração do NGINX para redirecionar parte do tráfego para o novo endpoint e, gradualmente, aumentar o tráfego até atingir 100%. Essa abordagem permitiu que as equipes desenvolvessem novas funcionalidades, tornando o monólito obsoleto ao longo do tempo.
+O processo de migração consistiu em desenvolver o novo microsserviço, replicar o endpoint antigo na nova borda, atualizar a configuração do NGINX para redirecionar parte do tráfego para o novo endpoint e, gradualmente, aumentar o tráfego até atingir 100%. Essa abordagem permitiu que as equipes desenvolvessem novas funcionalidades, tornando o monolito obsoleto ao longo do tempo.
 
-Durante a campanha, os desenvolvedores tiveram que lidar com uma mudança significativa na cadeia de ferramentas, escrevendo código em vários repositórios com ciclos de implantação diferentes. Eles também tiveram que aprender a provisionar recursos na nuvem (AWS) usando a linguagem de programação Go. Chamadas para módulos dentro do monólito eram simples, mas chamar outros serviços exigia considerações adicionais, como tratamento de erros, monitoramento, limitação de taxa, segurança, testes de integração e muito mais.
+Durante a campanha, os desenvolvedores tiveram que lidar com uma mudança significativa na cadeia de ferramentas, escrevendo código em vários repositórios com ciclos de implantação diferentes. Eles também tiveram que aprender a provisionar recursos na nuvem (AWS) usando a linguagem de programação Go. Chamadas para módulos dentro do monolito eram simples, mas chamar outros serviços exigia considerações adicionais, como tratamento de erros, monitoramento, limitação de taxa, segurança, testes de integração e muito mais.
 
 Apesar do caos inicial, algumas estruturas úteis surgiram como resultado desse processo. Alguns desses frameworks se tornaram populares dentro da empresa e também projetos de código aberto, como o Twirp.
 
