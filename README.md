@@ -7,3 +7,7 @@ A plataforma da Twitch foi criada oficialmente em 6 de Junho de 2011, sendo um m
 A ideia da nova arquitetura da Twitch era substituir o monolito por uma arquitetura baseada em microsserviços. Inicialmente, o foco era transformar o chat das lives em um microsserviço. Dentre as várias tecnologias estudadas para realizar essa mudança, Go foi a escolhida. Após testarem o chat e obterem bons resultados, outros times da Twitch tentaram utilizar o Go para outros serviços.
 
 A linguagem foi experimentada, por exemplo, para listar as maiores livestreams para cada categoria na Twitch. Essa tecnologia foi apelidada de Jax, e apresentou uma série de desafios para seu desenvolvimento, como indexar dados em tempo real, tentando manter eles organizados.
+
+# Fontes
+
+https://blog.twitch.tv/en/2022/03/30/breaking-the-monolith-at-twitch/
