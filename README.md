@@ -8,10 +8,6 @@ A ideia da nova arquitetura da Twitch era substituir o monolito por uma arquitet
 
 A linguagem foi experimentada, por exemplo, para listar as maiores livestreams para cada categoria na Twitch. Essa tecnologia foi apelidada de Jax, e apresentou uma série de desafios para seu desenvolvimento, como indexar dados em tempo real, tentando manter eles organizados.
 
-# Fontes
-
-https://blog.twitch.tv/en/2022/03/30/breaking-the-monolith-at-twitch/
-
 # O monólito - Parte 2
 
 ## A migração em massa: Wexit
@@ -44,6 +40,6 @@ Atualmente, no Twitch, a maioria das equipes trabalha com vários microsserviço
 
 As equipes de produtos operam de forma independente, gerenciando sua própria infraestrutura e ajustando seus serviços conforme necessário. Equipes centrais fornecem estruturas e ferramentas específicas para padronizar a pilha de engenharia e as práticas operacionais. Embora ainda ocorram migrações de código à medida que novas tecnologias se tornam disponíveis, a natureza distribuída dos microsserviços permite que as equipes contribuam em escala.
 
-# Fonte
-
+# Fontes
+https://blog.twitch.tv/en/2022/03/30/breaking-the-monolith-at-twitch/
 https://blog.twitch.tv/en/2022/04/12/breaking-the-monolith-at-twitch-part-2/
