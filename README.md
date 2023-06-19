@@ -25,15 +25,15 @@ Cada um desses diferentes componentes do Twitch tem diferentes desafios que prec
 
 ## Engenharia em escala
 
-Antes de mergulharmos na tecnologia que usamos atualmente, é importante observar que muitas das decisões que tomamos em relação à tecnologia são impulsionadas pelo tamanho do Twitch e pela rapidez com que ele está crescendo:
+Antes de mergulharmos na tecnologia que usamos atualmente, é importante observar que muitas das decisões que foram tomadas em relação à tecnologia são impulsionadas pelo tamanho do Twitch e pela rapidez com que ele está crescendo:
 
 - Temos mais de 30.000 pessoas transmitindo vídeo no Twitch simultaneamente.
 
-- Atingimos o pico de mais de 2 milhões de streams de vídeo simultâneos em nosso site.
+- Mais de 2 milhões de streams de vídeo simultâneos.
 
-- Nosso serviço de bate-papo entrega mais de 10 bilhões de mensagens por dia.
+- O serviço de bate-papo entrega mais de 10 bilhões de mensagens por dia.
 
-- Nossas APIs da web lidam com mais de 50 mil solicitações por segundo em média.
+- As APIs da web lidam com mais de 50 mil solicitações por segundo em média.
 
 - Nos últimos 3 anos, o número de engenheiros na Twitch cresceu mais de 800%.
 
@@ -45,35 +45,35 @@ Há muito o que falar em profundidade aqui, mas tentarei uma visão geral de alt
 
 ## Sistema de vídeo
 
-O sistema de vídeo é responsável por levar o vídeo da emissora para nossos espectadores. Isso inclui os seguintes componentes principais:
+O sistema de vídeo é responsável por levar o vídeo da emissora para os espectadores. Isso inclui os seguintes componentes principais:
 
-- Ingestão de vídeo — Pegamos o vídeo RTMP e o transportamos para o sistema de transcodificação.
+- Ingestão de vídeo — O vídeo RTMP é transportado para o sistema de transcodificação.
 
-- Sistema de transcodificação — Pegamos o fluxo RTMP de entrada do transmissor e o transcodificamos em vários fluxos HLS. Isso é implementado por meio de uma combinação de C/C++ e Go.
+- Sistema de transcodificação — O fluxo RTMP de entrada do transmissor é transcodificado em vários fluxos HLS. Isso é implementado por meio de uma combinação de C/C++ e Go.
 
-- Distribuição e borda — distribua os fluxos HLS para nossos POPs geograficamente díspares, de modo que você tenha a experiência de streaming de vídeo da mais alta qualidade. Novamente, principalmente escrito em Go.
+- Distribuição e borda — São distribuídos os fluxos HLS para POPs geograficamente díspares. Novamente, principalmente escrito em Go.
 
-- VOD (Video on Demand) — pegamos todos os nossos sistemas de vídeo recebidos e os arquivamos para o nosso sistema VOD.
+- VOD (Video on Demand) — Todos os sistemas de vídeo recebidos são coletados e arquivados para o sistema VOD.
 
 ## Chat
 
-Chat is a highly scalable real-time distributed system written in Go. It delivers hundreds of billions of messages per day to users who are watching video via our own protocols, as well as supporting IRC as a communication protocol, making it easy for developers to create IRC bots to add their own custom chat features. Core chat components include:
+Chat é um sistema distribuído em tempo real altamente escalável escrito em Go. Ele entrega centenas de bilhões de mensagens por dia para usuários que assistem a vídeos por meio de nossos próprios protocolos, além de oferecer suporte ao IRC como um protocolo de comunicação, tornando mais fácil para os desenvolvedores criar bots de IRC para adicionar seus próprios recursos de bate-papo personalizados. Os principais componentes do bate-papo incluem:
 
-- Edge — Receives and distribute messages between clients and backend services. Edge speaks the IRC protocol over both raw TCP and WebSockets.
+- Edge — Recebe e distribui mensagens entre clientes e serviços de back-end. O Edge fala o protocolo IRC sobre TCP bruto e WebSockets.
 
-- Pubsub — Distributes messages internally across Edge nodes. Pubsub and Edge combine to form a hierarchical message distribution system which executes massive fanout.
+- Pubsub — Distribui mensagens internamente pelos nós de Borda. Pubsub e Edge se combinam para formar um sistema hierárquico de distribuição de mensagens que executa fanout massivo.
 
 ## APIs e dados da Web
 
-Além dos nossos serviços em tempo real (vídeo e chat) dispomos também de um número substancial de serviços que incluem, mas não se limitam a:
+Além dos serviços em tempo real (vídeo e chat), a Twitch também dispõe de um número substancial de serviços que incluem, mas não se limitam a:
 
 - APIs da Web que permitem aos usuários gerenciar e personalizar seus perfis e assinaturas
 
-- Serviços de pesquisa e descoberta que ajudam você a encontrar os fluxos que deseja.
+- Serviços de pesquisa e descoberta que ajudam os usuários a encontrar os fluxos que desejam.
 
-- Sistemas de receita - são sistemas que nos permitem gerenciar publicidade e assinaturas e garantir que nossos parceiros recebam suas receitas.
+- Sistemas de receita - são sistemas que permitem gerenciar publicidade e assinaturas e garantir que os parceiros da Twitch recebam suas receitas.
 
-- Ferramentas administrativas que ajudam nossa equipe de suporte a resolver seus problemas.
+- Ferramentas administrativas que ajudam a equipe de suporte a resolver seus problemas.
 
 ## Infraestrutura de ciência de dados
 
@@ -169,3 +169,10 @@ As equipes de produtos operam de forma independente, gerenciando sua própria in
 
 - https://blog.twitch.tv/en/2022/04/12/breaking-the-monolith-at-twitch-part-2/
 
+# Autores
+
+- Breno Rosa
+- Carlos Aquino
+- Gabriel Mendonça
+- Matheus Brandão
+- Lucas Lage
